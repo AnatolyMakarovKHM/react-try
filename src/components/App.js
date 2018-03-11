@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+//import { Link } from 'react-router';
+
 import logo from '../logo.svg';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
+
 import CustomForm from './CustomForm';
 
 class App extends Component {
@@ -22,4 +26,7 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(
+    state => ({}),
+    dispatch => ({})
+)(App);

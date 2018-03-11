@@ -31,7 +31,7 @@ class CustomForm extends Component {
                 <div className="form-group">
                     <div className="form-check">
                         <input type="checkbox" onChange={this.handleChange} className="form-check-input" id="chk1" name="agreement"/>
-                        <label className="form-check-label" htmlFor="chk1">Some long read agreement. Don't read, simply agree, really.</label>
+                        <label className="form-check-label" htmlFor="chk1">Some long read agreement. Don't read, simply agree, really. Only one kidney...</label>
                     </div>
                 </div>
                 <div className="form-group">
@@ -46,24 +46,17 @@ class CustomForm extends Component {
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
 
-        if ( name == 'price') {
+        if ( name === 'price') {
             this.setState({[name]: value.replace(' $','')});
         } else {
             this.setState({[name]: value});
         }
-/*
-        console.log('----------------' + new Date());
-        console.log('current state - ' + this.state[event.target.name]);
-        console.log('current value - ' + value);
-*/
     }
 
     handleBlur(event) {
         const el = event.target;
         if ( el.pattern !== '' ) {
-            //console.log('name');
         }
-        console.log('blur event');
     }
 
     handleSubmit(event) {
